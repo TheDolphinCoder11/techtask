@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTask - Productivity App</title>
+    <meta name="description" content="A powerful to-do list application with Pomodoro timer, stopwatch, and task organization features to boost your productivity.">
+    <meta name="keywords" content="to-do list, task management, productivity, pomodoro timer, stopwatch, task organizer">
+    <meta name="author" content="Joe Schmoe">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="To-Do List | Productivity Tool for Task Management">
+    <meta property="og:description" content="A powerful to-do list application with Pomodoro timer, stopwatch, and task organization features to boost your productivity.">
+    <meta property="og:image" content="https://yourdomain.com/images/todo-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/">
+    <meta property="twitter:title" content="To-Do List | Productivity Tool for Task Management">
+    <meta property="twitter:description" content="A powerful to-do list application with Pomodoro timer, stopwatch, and task organization features to boost your productivity.">
+    <meta property="twitter:image" content="https://yourdomain.com/images/todo-preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/main-logo.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/task-progress.css">
+    <link rel="stylesheet" href="../css/style1.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/timebar.css">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/">
+</head>
+<body>
+    <!-- Add the changelog link directly to the body, outside any containers -->
+    <a href="changelog.html" id="changelog-link">Changelog</a>
+    
+    <div class="time-bar">
+        <div id="current-date">DD/MM/YYYY</div>
+        <div id="current-day">Day of Week</div>
+        <div id="current-time">HH:MM:SS</div>
+    </div>
+
+    <!-- Quotes Bar -->
+    <div class="quotes-bar">
+        <div class="quote-content">
+            <p id="quote-text">The best way to predict the future is to create it.</p>
+            <p id="quote-author">- Abraham Lincoln</p>
+        </div>
+        <button id="new-quote-btn" title="Get new quote">↻</button>
+    </div>
+
+    <div class="container">
+        <div class="header-row">
+            <h1>TO-DO LIST</h1>
+            <div class="header-buttons">
+                <!-- Remove the changelog link from here -->
+                <button id="fullscreen-toggle" title="Toggle fullscreen">⛶</button>
+                <button id="theme-toggle" title="Toggle theme">☀️</button>
+            </div>
+        </div>
+        
+        <div class="todo-input">
+            <input type="text" id="task-input" placeholder="Add a new task...">
+            <button id="add-button">ADD</button>
+        </div>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <ul id="task-list">
+            <!-- Tasks will be added here dynamically -->
+        </ul>
+        <div class="todo-footer">
+            <span id="tasks-counter">0 tasks left</span>
+            <button id="clear-completed">CLEAR COMPLETED</button>
+        </div>
+    </div>
+
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Task</h2>
+                <button id="close-modal-btn" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="edit-task-text">Task</label>
+                    <input type="text" id="edit-task-text" placeholder="Task description">
+                </div>
+                <div class="form-group">
+                    <label for="edit-task-due-date">Due Date</label>
+                    <input type="date" id="edit-task-due-date">
+                </div>
+                <div class="form-group">
+                    <label for="edit-task-category">Category</label>
+                    <input type="text" id="edit-task-category" placeholder="e.g., Work, Personal, Shopping">
+                </div>
+                <div class="form-group">
+                    <label for="edit-task-priority">Priority</label>
+                    <select id="edit-task-priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="edit-task-notes">Notes</label>
+                    <textarea id="edit-task-notes" placeholder="Add notes about this task"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-edit-btn" class="save-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pomodoro-section">
+        <div id="pomodoro-container" class="pomodoro-container resizable">
+            <h2>Pomodoro Timer</h2>
+            <div class="pomodoro-display">
+                <div id="pomodoro-status" class="work-session">Work Session</div>
+                <div id="timer-display" class="timer-display">25:00</div>
+            </div>
+            <div class="pomodoro-controls">
+                <button id="pomodoro-start" class="pomodoro-btn start-btn">Start</button>
+                <button id="pomodoro-pause" class="pomodoro-btn pause-btn" disabled>Pause</button>
+                <button id="pomodoro-reset" class="pomodoro-btn reset-btn" disabled>Reset</button>
+            </div>
+            <div class="pomodoro-settings">
+                <div class="form-group">
+                    <label for="pomodoro-task-selector">Focus on Task:</label>
+                    <select id="pomodoro-task-selector">
+                        <option value="">Select a task (optional)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="work-duration">Work Duration (minutes):</label>
+                    <input type="number" id="work-duration" min="1" max="60" value="25">
+                </div>
+                <div class="form-group">
+                    <label for="break-duration">Break Duration (minutes):</label>
+                    <input type="number" id="break-duration" min="1" max="30" value="5">
+                </div>
+            </div>
+            <div class="resize-handle pomodoro-resize-handle"></div>
+        </div>
+        
+        <div id="stopwatch-container" class="stopwatch-container resizable">
+            <h2>Stopwatch</h2>
+            <div class="stopwatch-display">
+                <div id="stopwatch-display" class="timer-display">00:00:00.000</div>
+            </div>
+            <div class="stopwatch-controls">
+                <button id="stopwatch-start" class="stopwatch-btn start-btn">Start</button>
+                <button id="stopwatch-pause" class="stopwatch-btn pause-btn" disabled>Pause</button>
+                <button id="stopwatch-reset" class="stopwatch-btn reset-btn" disabled>Reset</button>
+                <button id="stopwatch-lap" class="stopwatch-btn lap-btn" disabled>Lap</button>
+            </div>
+            <div class="lap-times">
+                <h3>Lap Times</h3>
+                <ul id="lap-list"></ul>
+            </div>
+            <div class="resize-handle stopwatch-resize-handle"></div>
+        </div>
+
+    <script src="../javascript/theme.js"></script>
+    <script src="../javascript/script.js"></script>
+    <script src="../javascript/timebar.js"></script>
+    <script src="../javascript/pomodoro.js"></script>
+    <script src="../javascript/stopwatch.js"></script>
+    <script src="../javascript/quotes.js"></script>
+    <script src="../javascript/fullscreen.js"></script>
+    <script>
+        const organizerScript = document.createElement('script');
+        organizerScript.src = '../javascript/task-organizer.js';
+        document.body.appendChild(organizerScript);
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursorScript = document.createElement('script');
+            cursorScript.src = '../javascript/cursor.js';
+            cursorScript.onload = function() {
+                if (typeof initCustomCursor === 'function') {
+                    initCustomCursor();
+                }
+            };
+            document.body.appendChild(cursorScript);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog | To-Do List Application Updates</title>
+    <meta name="description" content="View the latest updates and feature additions to our To-Do List application. Stay informed about new productivity tools and improvements.">
+    <meta name="keywords" content="changelog, to-do list updates, productivity app updates, feature releases">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/changelog.html">
+    <meta property="og:title" content="Changelog | To-Do List Application Updates">
+    <meta property="og:description" content="View the latest updates and feature additions to our To-Do List application. Stay informed about new productivity tools and improvements.">
+    <meta property="og:image" content="https://yourdomain.com/images/changelog-preview.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/changelog.html">
+    <meta property="twitter:title" content="Changelog | To-Do List Application Updates">
+    <meta property="twitter:description" content="View the latest updates and feature additions to our To-Do List application. Stay informed about new productivity tools and improvements.">
+    <meta property="twitter:image" content="https://yourdomain.com/images/changelog-preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/timebar.css">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/changelog.html">
+    
+    <style>
+        body {
+            color: white !important;
+            cursor: none !important; /* Apply custom cursor to entire body */
+        }
+        
+        /* Make sure all interactive elements have cursor: none */
+        a, button, input, select, .change-item, .version-header {
+            cursor: none !important;
+        }
+        
+        .back-to-app {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 9999;
+            text-decoration: none;
+            color: #30cfd0;
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+            background-color: rgba(30, 30, 30, 0.8);
+            border-radius: 6px;
+            border: 1px solid #30cfd0;
+            box-shadow: 0 0 15px rgba(48, 207, 208, 0.3);
+            padding: 10px 15px;
+            transition: color 0.3s, transform 0.2s;
+            cursor: none !important; /* Add this to ensure custom cursor works */
+        }
+        
+        .changelog-container {
+            width: 90%;
+            max-width: 800px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            border: 1px solid #30cfd0;
+            box-shadow: 0 0 20px rgba(48, 207, 208, 0.2);
+            padding: 30px;
+            margin: 50px auto;
+        }
+        
+        .changelog-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .version {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+        
+        .version:last-child {
+            border-bottom: none;
+        }
+        
+        .version-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .version-number {
+            color: #30cfd0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .version-date {
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .change-list {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        .change-item {
+            position: relative;
+            padding: 5px 0;
+            line-height: 1.5;
+        }
+        
+        .change-item:before {
+            content: "•";
+            color: #30cfd0;
+            position: absolute;
+            left: -15px;
+        }
+        
+        .planned-features {
+            margin-top: 15px;
+            background-color: rgba(48, 207, 208, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        .planned-title {
+            color: #30cfd0;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #333;
+            margin: 30px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Add time bar -->
+    <div class="time-bar">
+        <div id="current-date">DD/MM/YYYY</div>
+        <div id="current-day">Day of Week</div>
+        <div id="current-time">HH:MM:SS</div>
+    </div>
+
+    <!-- Add a direct link back to the app outside of containers -->
+    <a href="index.html" id="back-to-app" class="back-to-app">Back to App</a>
+
+    <div class="changelog-container">
+        <div class="changelog-header">
+            <h1>Changelog</h1>
+            <p>A record of all notable changes to the To-Do List application</p>
+        </div>
+        
+        <div class="version">
+            <div class="version-header">
+                <span class="version-number">Version 1.0.1</span>
+                <span class="version-date">9th of March, 2025</span>
+            </div>
+            
+            <ul class="change-list">
+                <li class="change-item">Added Motivational Quotes to stay motivated</li>
+                <li class="change-item">Added "beep" sound when pomodoro timer ends</li>
+            </ul>
+            
+            <div class="planned-features">
+                <h3 class="planned-title">Planned Features</h3>
+                <ul class="change-list">
+                    <li class="change-item">A changelog for users to publicly access the changes we have made to the application</li>
+                    <li class="change-item">SEO optimizations to make the site higher ranked on Google and other search engines</li>
+                    <li class="change-item">Small animations for when a task is done, it will play a good animation</li>
+                    <li class="change-item">Button that makes the tab fullscreen</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="version">
+            <div class="version-header">
+                <span class="version-number">Version 1.0.0</span>
+                <span class="version-date">8th of March, 2025</span>
+            </div>
+            
+            <ul class="change-list">
+                <li class="change-item">Added custom cursor</li>
+                <li class="change-item">Pomodoro Timer</li>
+                <li class="change-item">Stopwatch</li>
+                <li class="change-item">Added Time Bar</li>
+                <li class="change-item">Added Security features</li>
+                <li class="change-item">Added Task Organizer</li>
+            </ul>
+            
+            <div class="planned-features">
+                <h3 class="planned-title">Planned Features</h3>
+                <ul class="change-list">
+                    <li class="change-item">Music Player for deep work</li>
+                    <li class="change-item">Motivational Quotes to stay motivated</li>
+                    <li class="change-item">Add a "beep" sound when the pomodoro timer ends</li>
+                    <li class="change-item">Add a changelog page so users can publicly access the changelog</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../javascript/theme.js"></script>
+    <script src="../javascript/timebar.js"></script>
+    <script src="../javascript/cursor.js"></script>
+    <script>
+        // Make sure cursor.js is loaded and initialized
+        document.addEventListener('DOMContentLoaded', function() {
+            // Force cursor initialization
+            if (typeof initCustomCursor === 'function') {
+                initCustomCursor();
+            } else {
+                // If the function doesn't exist, create a simple version
+                const cursor = document.createElement('div');
+                cursor.className = 'custom-cursor';
+                cursor.style.position = 'fixed';
+                cursor.style.width = '20px';
+                cursor.style.height = '20px';
+                cursor.style.borderRadius = '50%';
+                cursor.style.backgroundColor = 'rgba(48, 207, 208, 0.5)';
+                cursor.style.border = '2px solid #30cfd0';
+                cursor.style.pointerEvents = 'none';
+                cursor.style.zIndex = '10001';
+                cursor.style.transform = 'translate(-50%, -50%)';
+                document.body.appendChild(cursor);
+                
+                document.addEventListener('mousemove', function(e) {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

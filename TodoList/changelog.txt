@@ -1,0 +1,31 @@
+Version 1.0.0 (8th of March, 8/3/2025):
+ - Added custom cursor: "/javascript/cursor.js"
+ - Pomodoro Timer: "/javascript/pomodoro.js"
+ - Stopwatch: "/javascript/stopwatch.js"
+ - Added Time Bar: "/javascript/timebar.js"
+ - Added Security features: "/javascript/security.js"
+ - Added Task Organizer: "/javascript/task-organizer.js" (Completed tasks move to top of list)
+Plan to add: 
+ - Music Player for deep work
+ - Motivational Quotes to stay motivated 
+ - Add a "beep" sound when the pomodoro timer ends
+ - Add a changelog page so users can publicly access the changelog
+
+----------------------------------------------------------------------
+
+Version 1.0.1 (9th of March, 9/3/2025):
+ - Added Motivational Qutotes to stay motivated: "/javascript/quotes.js"
+ - Added "beep" sound when pomodoro timer ends: "/assets/timer-end.mp3"
+Plan to add:
+ - A changelog for users to publicy access the changes we have made to the application
+ - SEO optimizations to make the site higher ranked on Google and other search engines
+ - Small animations for when a task is done, it will play a good animation
+ - Signing up feature and storage of the user's data, as well as able to sign in
+ - Give it a more techy feeling
+ - Button that makes the tab fullscreen
+
+----------------------------------------------------------------------
+
+Version 1.0.2 (10th of March, 10/3/2025):
+ - Added changelog for users to publicy access the changes we have made to the application
+ - Added button that makes the tab fullscreen
